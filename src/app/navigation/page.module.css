@@ -1,0 +1,194 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.header {
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.mainContent {
+  display: flex;
+  gap: 24px;
+  flex-grow: 1;
+}
+
+.sidebar {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputCard {
+  background: var(--surface-color);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.inputField {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.calculateBtn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.routesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.routeCard {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.routeCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.routeHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.routeName {
+  font-weight: 600;
+  color: #fff;
+}
+
+.routeDistance {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.routeMetrics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.routeMode {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.routeCarbon {
+  font-weight: 700;
+  color: var(--danger-color);
+}
+
+.greenRoute {
+  border-color: rgba(46, 160, 67, 0.5);
+  background: linear-gradient(135deg, rgba(22, 27, 34, 0.9) 0%, rgba(46, 160, 67, 0.1) 100%);
+}
+
+.greenRoute .routeCarbon {
+  color: var(--primary-color);
+}
+
+.mapContainer {
+  flex-grow: 1;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.mapPlaceholder {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.mapIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.tangibleImpact {
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(46, 160, 67, 0.1);
+  border: 1px solid rgba(46, 160, 67, 0.3);
+  border-radius: 8px;
+}
+
+.impactTitle {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.impactList {
+  list-style: none;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.impactList li {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

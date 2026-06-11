@@ -1,0 +1,61 @@
+:root {
+  /* Core Colors */
+  --bg-color: #0d1117;
+  --surface-color: rgba(22, 27, 34, 0.7);
+  --surface-border: rgba(255, 255, 255, 0.1);
+  --primary-color: #2ea043;
+  --primary-glow: rgba(46, 160, 67, 0.4);
+  --secondary-color: #58a6ff;
+  --text-main: #c9d1d9;
+  --text-muted: #8b949e;
+  --danger-color: #f85149;
+  --xp-color: #e3b341;
+  
+  /* Fonts */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--surface-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
