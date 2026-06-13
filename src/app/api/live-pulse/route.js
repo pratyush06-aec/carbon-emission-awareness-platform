@@ -47,7 +47,7 @@ Generate highly realistic, up-to-date environmental metrics and news for the cit
 
 ${aqiContext}
 
-Provide the response in the following strict JSON format, without markdown formatting or code blocks:
+Provide the response in the following strict JSON format, without markdown formatting or code blocks. Generate exactly 3 global measures and exactly 2 community missions.
 
 {
   "cityMetrics": {
@@ -62,8 +62,7 @@ Provide the response in the following strict JSON format, without markdown forma
       "location": "City or Country",
       "impact": "Estimated impact (e.g. '-500 Tons CO2')",
       "time": "e.g. '2 hours ago'"
-    },
-    // exactly 3 items
+    }
   ],
   "communityMissions": [
     {
@@ -72,8 +71,7 @@ Provide the response in the following strict JSON format, without markdown forma
       "target": 5000,
       "progress": 3870,
       "participants": "e.g. '1,240 active'"
-    },
-    // exactly 2 items
+    }
   ]
 }`;
 
@@ -96,7 +94,7 @@ Provide the response in the following strict JSON format, without markdown forma
     return new Response(JSON.stringify(parsed), { status: 200 });
 
   } catch (error) {
-    console.error("Live Pulse API Error:", error);
-    return new Response(JSON.stringify({ error: "Failed to fetch live pulse data" }), { status: 500 });
+    console.error("Live Pulse API Error:", error.message || error);
+    return new Response(JSON.stringify({ error: "Failed to fetch live pulse data", details: error.message }), { status: 500 });
   }
 }

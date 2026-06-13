@@ -21,10 +21,13 @@ export default function LivePulse() {
         const json = await res.json();
         setData(json);
       } else {
-        console.error("Failed to fetch live pulse data");
+        const errObj = await res.json().catch(() => ({}));
+        console.error("Failed to fetch live pulse data:", errObj.details || "Unknown error");
+        setData(null);
       }
     } catch (err) {
-      console.error(err);
+      console.error("Network or parsing error:", err);
+      setData(null);
     } finally {
       setLoading(false);
     }
