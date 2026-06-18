@@ -74,7 +74,7 @@ export default function Navigation() {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>Carbon-Aware Navigation</h1>
         <p className={styles.subtitle}>Find the greenest, fastest, or cheapest route to your destination.</p>
@@ -86,9 +86,10 @@ export default function Navigation() {
             {isLoaded ? (
               <>
                 <div className={styles.inputGroup}>
-                  <label>Source</label>
+                  <label htmlFor="source-input">Source</label>
                   <Autocomplete>
                     <input 
+                      id="source-input"
                       type="text" 
                       className={styles.inputField} 
                       placeholder="e.g. Home" 
@@ -97,9 +98,10 @@ export default function Navigation() {
                   </Autocomplete>
                 </div>
                 <div className={styles.inputGroup}>
-                  <label>Destination</label>
+                  <label htmlFor="dest-input">Destination</label>
                   <Autocomplete>
                     <input 
+                      id="dest-input"
                       type="text" 
                       className={styles.inputField} 
                       placeholder="e.g. Office" 
@@ -115,7 +117,7 @@ export default function Navigation() {
           </div>
 
           {showRoutes && carbonMetrics && (
-            <div className={styles.routesContainer}>
+            <div className={styles.routesContainer} aria-live="polite">
               <div className={styles.routeCard}>
                 <div className={styles.routeHeader}>
                   <span className={styles.routeName}>Fastest (Car/Cab)</span>
@@ -179,6 +181,6 @@ export default function Navigation() {
           )}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

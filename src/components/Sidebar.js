@@ -51,13 +51,13 @@ export default function Sidebar() {
         <div className={styles.logoText}>CarbonSense</div>
       </div>
 
-      <nav className={styles.navLinks}>
+      <nav className={styles.navLinks} aria-label="Main Sidebar Navigation">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (
-            <Link href={item.path} key={item.name}>
-              <div className={`${styles.navItem} ${isActive ? styles.active : ''}`}>
-                <span className={styles.icon}>{item.icon}</span>
+            <Link href={item.path} key={item.name} aria-label={`Navigate to ${item.name}`}>
+              <div className={`${styles.navItem} ${isActive ? styles.active : ''}`} aria-current={isActive ? 'page' : undefined}>
+                <span className={styles.icon} aria-hidden="true">{item.icon}</span>
                 {item.name}
               </div>
             </Link>

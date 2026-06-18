@@ -78,12 +78,12 @@ export default function Login() {
   }, []);
 
   return (
-    <div className={styles.container} ref={containerRef}>
+    <main className={styles.container} ref={containerRef}>
       {/* Background layer for the Antigravity deep mesh floating animation */}
       <div className={styles.ambientBackground}></div>
 
       {/* Main Glassmorphism Login Card */}
-      <div 
+      <section 
         className={styles.loginCard} 
         ref={cardRef}
         onMouseEnter={() => { isHoveringRef.current = true; }}
@@ -100,6 +100,7 @@ export default function Login() {
 
         <button 
           className={styles.googleButton}
+          aria-label="Sign in securely with your Google account"
           onClick={() => signIn('google', { callbackUrl: '/' })}
         >
           <img 
@@ -109,7 +110,7 @@ export default function Login() {
           />
           Sign in with Google
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
